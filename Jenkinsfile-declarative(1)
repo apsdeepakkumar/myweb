@@ -1,9 +1,3 @@
-# 2 types of pipeline 
-
-## declarative and scripted pipeline
-
-# Definition of declarative Pipeline
-
 pipeline {
     agent {label 'jenkins-slave'}
 
