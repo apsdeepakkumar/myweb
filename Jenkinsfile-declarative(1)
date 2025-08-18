@@ -1,0 +1,18 @@
+# 2 types of pipeline 
+
+## declarative and scripted pipeline
+
+# Definition of declarative Pipeline
+
+pipeline {
+    agent {label 'jenkins-slave'}
+
+    stages{
+        stage('definition of declarative pipeline')
+        {
+            steps{
+                echo "It's a declarative pipeline"
+            }
+        }
+    }
+}
