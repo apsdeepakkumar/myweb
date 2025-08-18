@@ -19,8 +19,8 @@ pipeline{
                     sh """
                         scp -o StrictHostKeyChecking=no  target/myweb.war deepakkumar@10.105.1.16:/opt/tomcat-9/webapps/
 
-                        shh deepakkumar@10.105.1.16 /opt/tomcat-9/bin/shutdown.sh
-                        shh deepakkumar@10.105.1.16 /opt/tomcat-9/bin/startup.sh
+                        ssh deepakkumar@10.105.1.16 /opt/tomcat-9/bin/shutdown.sh
+                        ssh deepakkumar@10.105.1.16 /opt/tomcat-9/bin/startup.sh
                          
                     """
                 }
