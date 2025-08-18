@@ -1,0 +1,15 @@
+pipeline{
+    agent {label 'jenkins-slave}
+
+    environment{
+        PATH = "/usr/share/maven/bin:$PATH"
+    }
+
+    stages{
+        stage("Adding maven to the path"){
+            steps{
+                sh "mvn clean package"
+            }
+        }
+    }
+}
