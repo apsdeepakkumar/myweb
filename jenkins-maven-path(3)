@@ -1,5 +1,5 @@
 pipeline{
-    agent {label 'jenkins-slave}
+    agent {label 'jenkins-slave'}
 
     environment{
         PATH = "/usr/share/maven/bin:$PATH"
@@ -13,3 +13,4 @@ pipeline{
         }
     }
 }
+
