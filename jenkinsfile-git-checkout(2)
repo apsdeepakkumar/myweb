@@ -1,0 +1,17 @@
+pipeline {
+    agent {label 'jenkins-slave'}
+
+    stages{
+        stage('definition of declarative pipeline')
+        {
+            steps{
+                echo "It's a declarative pipeline"
+            }
+        }
+        stage('git checkout'){
+            steps{
+                git credentialsId: 'github-cred', url: 'https://github.com/apsdeepakkumar/myweb'
+            }
+        }
+    }
+}
