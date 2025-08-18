@@ -1,8 +1,8 @@
-# 2 types of pipeline 
+/* 2 types of pipeline 
 
-## declarative and scripted pipeline
+ declarative and scripted pipeline.  */
 
-# Definition of declarative Pipeline
+ // ******** Definition/Syntax of declarative Pipeline.   ********
 
 pipeline {
     agent {label 'jenkins-slave'}
@@ -16,3 +16,15 @@ pipeline {
         }
     }
 }
+
+
+// ******** Definition/Syntax of Scripted Pipeline.   ********
+
+node{
+    agent {label 'jenkins-slave'}
+
+    stage("welcome to jenkins"){
+        echo "Welcome to jenkins"
+    }
+}
+
