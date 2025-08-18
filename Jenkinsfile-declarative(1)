@@ -20,9 +20,7 @@ pipeline {
 
 // ******** Definition/Syntax of Scripted Pipeline.   ********
 
-node{
-    agent {label 'jenkins-slave'}
-
+node('jenkins-slave'){
     stage("welcome to jenkins"){
         echo "Welcome to jenkins"
     }
