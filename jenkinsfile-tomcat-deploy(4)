@@ -1,0 +1,32 @@
+pipeline{
+    agent {label 'jenkins-slave'}
+
+    environment{
+        PATH = "/usr/share/maven/bin:$PATH"
+    }
+
+    stages{
+        stage("Adding maven to the path"){
+            steps{
+                sh "mvn clean package"
+                sh "mv target/*.war target/myweb.war"
+            }
+        }
+
+        stage("deploy to tomcat"){
+            steps{
+                sshagent(['tomcat-ID']) {
+                    sh """
+                        scp -o StrictHostKeyChecking=no  target/myweb.war deepakkumar@10.105.1.16/opt/tomcat-9/webapps/
+
+                        shh deepakkumar@10.105.1.16 /opt/tomcat-9/bin/shutdown.sh
+                        shh deepakkumar@10.105.1.16 /opt/tomcat-9/bin/startup.sh
+                         
+                    """
+                }
+            }
+        }
+    }
+}
+
+
