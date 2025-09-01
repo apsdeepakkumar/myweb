@@ -1,4 +1,4 @@
-currentBuild.displayName = "Deepak-#" + currentBuild.number
+currentBuild.displayName = "Deepak#" + currentBuild.number
 pipeline{
     agent {label 'jenkins-slave'}
 
@@ -14,7 +14,7 @@ pipeline{
             }
         }
 
-        stage("deploy to tomcat"){
+        stage("deploy to tomcats"){
             steps{
                 sshagent(['tomcat-ID']) {
                     sh """
